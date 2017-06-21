@@ -22,6 +22,7 @@ app.get('/webhook/', function (req, res) {
 
 var  math = require('mathjs');
 
+/*
 function replyToSender(sender, text) {
   messageData = {
     text : text
@@ -42,6 +43,7 @@ function replyToSender(sender, text) {
        }
      });
 };
+*/
 
 app.post('/webhook/', function (req, res) {
   messaging_events = req.body.entry[0].messaging;
