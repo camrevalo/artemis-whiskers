@@ -52,7 +52,7 @@ app.post('/webhook/', function (req, res) {
     sender = event.sender.id;
     if (event.message && event.message.text) {
       text = event.message.text;
-      //Do whatever you want with the text
+      replyToSender(sender, math.eval(text));
     }
   }
   res.sendStatus(200);
