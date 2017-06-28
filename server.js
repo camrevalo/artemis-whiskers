@@ -9,8 +9,7 @@ app.use(bodyParser.urlencoded({
 
 var port = process.env.PORT || 8080;
 
-var token = "EAAEe2ztWUL4BAP6gZAHvqr06oHZBqoZBQwL2HaHtrbt45V00g2mcZB3wtUgJuEd2nZAqviYmZB5ZA7fv3fJiAubZAVn2bzb2xPkAXvH3ZAkoLcfJfiNEnseCqnoSb4i8kepBNEplC3umwqCtsbBh19KmS7F5UYGJMhKFFPKN1xejwPAZDZD";
-
+var token = "EAAEe2ztWUL4BAPLZAEZAeHG0rNWiasTtP4TMVg690i68rHS1s2BFb4EQ2R8VKjYImjtaRZBDHEfUxWnRMl2SKWkcbxL4w0NUwEzdd7KxTHreDxQSRuKZANrFpO4KxP4uvGNUIJl8DhYBtBWN4nlCMZC4ZBYGZA6ZBd9bXL1yyTYx2wZDZD";
 
 
 app.get('/webhook/', function (req, res) {
@@ -21,7 +20,6 @@ app.get('/webhook/', function (req, res) {
 });
 
 var  math = require('mathjs');
-
 
 function replyToSender(sender, text) {
   messageData = {
@@ -52,7 +50,8 @@ app.post('/webhook/', function (req, res) {
     sender = event.sender.id;
     if (event.message && event.message.text) {
       text = event.message.text;
-      replyToSender(sender, math.eval(text));
+      replyToSender(sender, text);
+      //replyToSender(sender, math.eval(text));
     }
   }
   res.sendStatus(200);
